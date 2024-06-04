@@ -106,8 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function hasReached(el) {
   let topPosition = el.getBoundingClientRect().top;
 
-  if (window.innerHeight >= topPosition + el.offsetHeight) return true;
-  return false;
+  return window.innerHeight >= topPosition + el.offsetHeight;
 }
 
 let skillsPlayed = false;
@@ -277,9 +276,13 @@ links.forEach((link) =>
   })
 );
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const yearElement = document.querySelector('.year-text')
   const currentYear = new Date().getFullYear()
   yearElement.innerHTML = `&copy; Copyright ${currentYear}. All rights reserved`
 })
+
+const currentYear = new Date().getFullYear()
+const birthYear = 1998
+const age = currentYear - birthYear
+document.getElementById('age').textContent = age
